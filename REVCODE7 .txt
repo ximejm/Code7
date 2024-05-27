@@ -1,0 +1,49 @@
+REVCODE7 
+Sonia Ximena Juárez Mercado 
+Evaluó Melanie Vite 4/5
+
+package com.code7;
+
+import java.util.HashMap; //importar librería 
+import java.util.Scanner; //importar librería 
+
+public class Codigo7 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in); //Agregar System.in 
+	    HashMap<String, String> capitales = new HashMap<>(); //Cambiar a string, string 
+
+	    capitales.put("Canadá", "Otawwa");
+	    capitales.put("Estados Unidos", "Washington DC");
+	    capitales.put("México", "México DF");
+	    capitales.put("Belice", "Belmopán");
+	    capitales.put("Costa rica", "San José");
+	    capitales.put("El Salvador", "San Salvador"); //Agregar el parámetro 
+	    capitales.put("Guatemala", "Ciudad de Guatemala");
+	    capitales.put("Honduras", "Tegucigalpa");
+	    capitales.put("Nicaragua", "Managua");
+	    capitales.put("Panamá", "Panamá");
+	   
+	    String c;
+	    do {
+	      System.out.println("Escribe el nombre de un país y te diré su capital: "); //Cambiar in por out 
+	      c = sc.nextLine(); //Cambiar a nextLine 
+	    
+	      if (!c.equals("salir")) { //Agregar S a equals 
+	        if (capitales.containsKey(c)) { //Cambiar a .containsKey 
+	          System.out.print("La capital de: " + c + "es: " + capitales.get(c)); //Cambiar out y dejar todo en una misma línea 
+	          System.out.print("¿cuál es la capital de " + c + "?: ");
+	        } else {
+	          System.out.print("No conozco la respuesta ");
+	          System.out.print("¿cuál es la capital de " + c + "?: ");
+	          String ca = sc.nextLine();
+	          capitales.put(c, ca);
+	          System.out.println("Gracias por enseñarme nuevas capitales");
+	          
+	        }
+	      }
+	    } while (!c.equals("salir")); //Cambiar a while
+	  }
+	}
+	
